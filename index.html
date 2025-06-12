@@ -1,137 +1,263 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ar.1d – Aryan Kaul</title>
-  <style>
-    body { max-width: 640px; margin: 0 auto; padding: 1rem; font-family: Arial, sans-serif; line-height: 1.6; }
-    h1, h2, h3, h4 { margin: 1.2rem 0 0.6rem; }
-    img.profile { width: 150px; height: 150px; border-radius: 50%; }
-    nav a { margin-right: 1rem; text-decoration: none; color: #0066cc; }
-    footer { margin-top: 2rem; font-size: 0.9rem; color: #555; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Doe - Programmer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
 </head>
-<body>
+<body class="bg-slate-900 text-slate-300">
 
-  <header style="text-align:center; margin-bottom:2rem;">
-    <img src="YOUR_PROFILE_PIC_URL" alt="Aryan Kaul" class="profile" />
-    <h1>hey!</h1>
-    <p>i'm ar yan ka ul!</p>
-    <p>aka ar.1d / aryan / kaul</p>
-    <p>Virar, Maharashtra, India – GMT +5:30 – he/him</p>
-  </header>
+    <!-- Header -->
+    <header class="bg-slate-900/70 backdrop-blur-lg sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-white">JD</a>
+            <div class="hidden md:flex space-x-6 items-center">
+                <a href="#about" class="hover:text-cyan-400 transition-colors">About</a>
+                <a href="#skills" class="hover:text-cyan-400 transition-colors">Skills</a>
+                <a href="#projects" class="hover:text-cyan-400 transition-colors">Projects</a>
+                <a href="#contact" class="hover:text-cyan-400 transition-colors">Contact</a>
+            </div>
+            <a href="#contact" class="hidden md:block bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-2 px-4 rounded-lg transition-colors">
+                Hire Me
+            </a>
+            <button id="mobile-menu-button" class="md:hidden text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="#about" class="block py-2 hover:text-cyan-400 transition-colors">About</a>
+            <a href="#skills" class="block py-2 hover:text-cyan-400 transition-colors">Skills</a>
+            <a href="#projects" class="block py-2 hover:text-cyan-400 transition-colors">Projects</a>
+            <a href="#contact" class="block py-2 hover:text-cyan-400 transition-colors">Contact</a>
+            <a href="#contact" class="block mt-2 bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-2 px-4 rounded-lg transition-colors text-center">
+                Hire Me
+            </a>
+        </div>
+    </header>
 
-  <nav>
-    <a href="#home">home</a>
-    <a href="#info">info</a>
-    <a href="#projects">projects</a>
-    <a href="#hire">hire me</a>
-    <a href="#socials">socials</a>
-  </nav>
+    <main class="container mx-auto px-6 py-12">
 
-  <section id="welcome">
-    <p>welcome to my pseudo‑portfolio, my corner of the wonderful ar.1d.me on the grand internet.</p>
-    <p>i'm aryan kaul; a tech nerd who loves tinkering and grokking.</p>
-    <p>my dream is to create software that impacts people and hardware that impacts cows (preferably positively).</p>
-  </section>
+        <!-- Hero Section -->
+        <section id="home" class="text-center py-20">
+            <h1 class="text-4xl md:text-6xl font-bold text-white mb-4">John Doe</h1>
+            <p class="text-xl md:text-2xl text-cyan-400 mb-8">Creative Frontend & Backend Developer</p>
+            <p class="max-w-2xl mx-auto text-slate-400 mb-8">
+                I build beautiful, responsive, and highly functional web applications. Turning complex problems into elegant digital solutions.
+            </p>
+            <a href="#projects" class="bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-3 px-8 rounded-lg transition-colors text-lg">
+                View My Work
+            </a>
+        </section>
 
-  <section id="projects">
-    <h2>My Top Projects</h2>
-    <p>link‑shortener ar‑stalk cattle‑hub go‑cattle sofusdela ... and more to come</p>
-  </section>
+        <!-- About Section -->
+        <section id="about" class="py-20">
+            <h2 class="text-3xl font-bold text-white text-center mb-12">About Me</h2>
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/3">
+                    <img src="https://placehold.co/400x400/1e293b/94a3b8?text=Your\nPhoto" alt="A portrait of John Doe" class="rounded-lg shadow-lg mx-auto">
+                </div>
+                <div class="md:w-2/3">
+                    <h3 class="text-2xl font-bold text-white mb-4">Who am I?</h3>
+                    <p class="text-slate-400 mb-4">
+                        Hello! I'm John Doe, a passionate programmer based in [Your City]. My journey in tech started with a simple "Hello, World!" and has since grown into a full-fledged passion for building scalable and user-friendly software. I thrive on challenges and am constantly learning new technologies to push the boundaries of what's possible.
+                    </p>
+                    <p class="text-slate-400">
+                        When I'm not coding, you can find me exploring the latest sci-fi novels, hiking in the mountains, or experimenting with new recipes in the kitchen.
+                    </p>
+                </div>
+            </div>
+        </section>
 
-  <section id="skills">
-    <h2>My Skills</h2>
-    <p>procrastinating programming grokking cybersecurity marketing homelabbing existing humor /jk</p>
-  </section>
+        <!-- Skills Section -->
+        <section id="skills" class="py-20">
+            <h2 class="text-3xl font-bold text-white text-center mb-12">My Skills</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 text-center">
+                <div class="bg-slate-800 p-6 rounded-lg hover:bg-slate-700 transition-colors">
+                    <p class="text-5xl mb-2">💻</p>
+                    <h3 class="font-semibold text-white">JavaScript</h3>
+                </div>
+                <div class="bg-slate-800 p-6 rounded-lg hover:bg-slate-700 transition-colors">
+                    <p class="text-5xl mb-2">⚛️</p>
+                    <h3 class="font-semibold text-white">React</h3>
+                </div>
+                <div class="bg-slate-800 p-6 rounded-lg hover:bg-slate-700 transition-colors">
+                    <p class="text-5xl mb-2">📦</p>
+                    <h3 class="font-semibold text-white">Node.js</h3>
+                </div>
+                <div class="bg-slate-800 p-6 rounded-lg hover:bg-slate-700 transition-colors">
+                    <p class="text-5xl mb-2">🐍</p>
+                    <h3 class="font-semibold text-white">Python</h3>
+                </div>
+                <div class="bg-slate-800 p-6 rounded-lg hover:bg-slate-700 transition-colors">
+                    <p class="text-5xl mb-2">🎨</p>
+                    <h3 class="font-semibold text-white">Tailwind CSS</h3>
+                </div>
+                <div class="bg-slate-800 p-6 rounded-lg hover:bg-slate-700 transition-colors">
+                    <p class="text-5xl mb-2">💾</p>
+                    <h3 class="font-semibold text-white">SQL</h3>
+                </div>
+                 <div class="bg-slate-800 p-6 rounded-lg hover:bg-slate-700 transition-colors">
+                    <p class="text-5xl mb-2">🐳</p>
+                    <h3 class="font-semibold text-white">Docker</h3>
+                </div>
+                 <div class="bg-slate-800 p-6 rounded-lg hover:bg-slate-700 transition-colors">
+                    <p class="text-5xl mb-2">☁️</p>
+                    <h3 class="font-semibold text-white">Cloud (AWS/GCP)</h3>
+                </div>
+                 <div class="bg-slate-800 p-6 rounded-lg hover:bg-slate-700 transition-colors">
+                    <p class="text-5xl mb-2">📈</p>
+                    <h3 class="font-semibold text-white">Data Analysis</h3>
+                </div>
+                <div class="bg-slate-800 p-6 rounded-lg hover:bg-slate-700 transition-colors">
+                    <p class="text-5xl mb-2">🤖</p>
+                    <h3 class="font-semibold text-white">AI / ML</h3>
+                </div>
+            </div>
+        </section>
 
-  <section id="socials">
-    <h2>My Socials</h2>
-    <p>ranked by activeness:</p>
-    <ul>
-      <li>X (fka Twitter)</li>
-      <li>Reddit</li>
-      <li>GitHub</li>
-      <li>Instagram</li>
-      <li>LinkedIn</li>
-      <li>Email: <a href="mailto:aryan@example.com">aryan@example.com</a></li>
-    </ul>
-    <p>"social media bad"</p>
-  </section>
+        <!-- Projects Section -->
+        <section id="projects" class="py-20">
+            <h2 class="text-3xl font-bold text-white text-center mb-12">My Projects</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="bg-slate-800 rounded-lg overflow-hidden group">
+                    <img src="https://placehold.co/600x400/1e293b/94a3b8?text=Project+1" alt="Screenshot of Project 1" class="w-full h-48 object-cover group-hover:scale-105 transition-transform">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">E-commerce Platform</h3>
+                        <p class="text-slate-400 mb-4">A full-stack e-commerce site with features like product search, cart, and secure payments.</p>
+                        <div class="flex gap-2 mb-4">
+                            <span class="bg-cyan-900/50 text-cyan-300 text-xs font-semibold px-2.5 py-0.5 rounded-full">React</span>
+                            <span class="bg-cyan-900/50 text-cyan-300 text-xs font-semibold px-2.5 py-0.5 rounded-full">Node.js</span>
+                            <span class="bg-cyan-900/50 text-cyan-300 text-xs font-semibold px-2.5 py-0.5 rounded-full">PostgreSQL</span>
+                        </div>
+                        <a href="#" class="text-cyan-400 hover:text-cyan-300 font-semibold">View Details &rarr;</a>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="bg-slate-800 rounded-lg overflow-hidden group">
+                    <img src="https://placehold.co/600x400/1e293b/94a3b8?text=Project+2" alt="Screenshot of Project 2" class="w-full h-48 object-cover group-hover:scale-105 transition-transform">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Data Visualization Dashboard</h3>
+                        <p class="text-slate-400 mb-4">An interactive dashboard for visualizing complex datasets using D3.js and Python.</p>
+                         <div class="flex gap-2 mb-4">
+                            <span class="bg-green-900/50 text-green-300 text-xs font-semibold px-2.5 py-0.5 rounded-full">Python</span>
+                            <span class="bg-green-900/50 text-green-300 text-xs font-semibold px-2.5 py-0.5 rounded-full">Flask</span>
+                            <span class="bg-green-900/50 text-green-300 text-xs font-semibold px-2.5 py-0.5 rounded-full">D3.js</span>
+                        </div>
+                        <a href="#" class="text-cyan-400 hover:text-cyan-300 font-semibold">View Details &rarr;</a>
+                    </div>
+                </div>
+                <!-- Project 3 -->
+                <div class="bg-slate-800 rounded-lg overflow-hidden group">
+                    <img src="https://placehold.co/600x400/1e293b/94a3b8?text=Project+3" alt="Screenshot of Project 3" class="w-full h-48 object-cover group-hover:scale-105 transition-transform">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-2">Mobile Task Manager</h3>
+                        <p class="text-slate-400 mb-4">A cross-platform mobile app built with React Native to help users stay organized.</p>
+                         <div class="flex gap-2 mb-4">
+                            <span class="bg-blue-900/50 text-blue-300 text-xs font-semibold px-2.5 py-0.5 rounded-full">React Native</span>
+                            <span class="bg-blue-900/50 text-blue-300 text-xs font-semibold px-2.5 py-0.5 rounded-full">Firebase</span>
+                        </div>
+                        <a href="#" class="text-cyan-400 hover:text-cyan-300 font-semibold">View Details &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <section id="info">
-    <h2>More Info About Me</h2>
-    <p>I am Aryan Kaul, I like technology. and that's all that to say about me. if there is, i can't put it into words myself.</p>
-    <p>my last social interaction was with my homelab server.</p>
-    <p>I like programming because ... I like making things, solving problems, and breaking stuff to fix it.</p>
-    <p>I'm obsessed with myself – impulse or obsession, depends who you ask.</p>
-    <p>I was destined to be in tech. learned HTML & CSS by 12, Python at 13…</p>
-    <p>Still average, still chaotic, still passionate.</p>
-    <p>I suck at time management. Passion drives me.</p>
-    <p>When I'm offline: chess, sleep, think. But mostly think.</p>
-    <h3>Some Thoughts (via ar‑stalk)</h3>
-    <ul>
-      <li>I have an endless desire for self‑expression...</li>
-      <li>I try to be opinionated online but I’m shy IRL.</li>
-      <li>I lean atheist, rational, science‑forward.</li>
-      <li>Liberty, Equality, Fraternity, with responsible speech.</li>
-      <li>No religions, culture without control.</li>
-      <li>I live and defend free speech—but harassment is unacceptable.</li>
-      <li>A “Mettle Bottle” story on Reddit – I lost one once.</li>
-      <li>I’m impulsive, fueled by mood swings and heat-of-moment decisions.</li>
-      <li>Raised by the internet; I’m its kid.</li>
-      <li>Humor is my coping mechanism.</li>
-      <li>I'm less introvert lately, but social dynamics still weird.</li>
-      <li>I distrust centralization, value decentralization (evil, essential, necessary?).</li>
-    </ul>
-    <p>~ 12th June 2025</p>
-  </section>
+        <!-- Contact Section -->
+        <section id="contact" class="py-20">
+            <h2 class="text-3xl font-bold text-white text-center mb-12">Get In Touch</h2>
+            <div class="max-w-xl mx-auto">
+                 <p class="text-center text-slate-400 mb-8">
+                    I'm currently available for freelance work and open to new opportunities. If you have a project in mind or just want to say hello, feel free to reach out!
+                </p>
+                <form id="contact-form" class="space-y-6">
+                    <div>
+                        <label for="name" class="block mb-2 text-sm font-medium text-slate-400">Your Name</label>
+                        <input type="text" id="name" name="name" class="w-full p-3 bg-slate-800 border border-slate-700 rounded-lg focus:ring-cyan-500 focus:border-cyan-500" required>
+                    </div>
+                    <div>
+                        <label for="email" class="block mb-2 text-sm font-medium text-slate-400">Your Email</label>
+                        <input type="email" id="email" name="email" class="w-full p-3 bg-slate-800 border border-slate-700 rounded-lg focus:ring-cyan-500 focus:border-cyan-500" required>
+                    </div>
+                    <div>
+                        <label for="message" class="block mb-2 text-sm font-medium text-slate-400">Your Message</label>
+                        <textarea id="message" name="message" rows="5" class="w-full p-3 bg-slate-800 border border-slate-700 rounded-lg focus:ring-cyan-500 focus:border-cyan-500" required></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-cyan-500 hover:bg-cyan-600 text-white font-bold py-3 px-6 rounded-lg transition-colors">
+                        Send Message
+                    </button>
+                </form>
+                 <div id="form-feedback" class="text-center mt-4"></div>
+            </div>
+        </section>
+    </main>
 
-  <section id="latest-projects">
-    <h2>My Latest Projects</h2>
-    <div>
-      <h4>ar.1d.me (global hub)</h4>
-      <p>A personal home‑hub & URL shortener built with Python, Flask, SQLite. Integration planned: pastebin, image host, file share, messaging, canvas…</p>
-      <a href="https://ar.1d.me">visit ar.1d.me (you're on it!)</a>
-    </div>
-    <hr />
+    <!-- Footer -->
+    <footer class="bg-slate-800/50">
+        <div class="container mx-auto px-6 py-8 text-center text-slate-400">
+             <div class="flex justify-center space-x-6 mb-4">
+                <!-- Replace with your actual social links -->
+                <a href="#" class="hover:text-white transition-colors">GitHub</a>
+                <a href="#" class="hover:text-white transition-colors">LinkedIn</a>
+                <a href="#" class="hover:text-white transition-colors">Twitter / X</a>
+             </div>
+            <p>&copy; 2024 John Doe. All Rights Reserved.</p>
+        </div>
+    </footer>
 
-    <div>
-      <h4>ar‑stalk</h4>
-      <p>A Gemini powered Reddit‑user profiler: wraps PRAW, scrapes, analyzes, auto‑comments. Fully automated.</p>
-      <a href="https://github.com/aryan/ar-stalk">check out ar‑stalk</a>
-    </div>
-    <hr />
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
 
-    <div>
-      <h4>sofusdela</h4>
-      <p>Secret opening in the fortress: uncovering school data exposures. A cautionary tale.</p>
-      <a href="https://github.com/aryan/sofusdela">s.o.f.u.s.d.e.l.a.</a>
-    </div>
-    <hr />
+        // Close mobile menu when a link is clicked
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
 
-    <div>
-      <h4>go‑cattle</h4>
-      <p>Cattle Optimization Workstation (COW): neck‑worn tracker using anomaly/KNN + CV‑CNN visual disease detector. Vet‑approved.</p>
-      <a href="https://github.com/aryan/go-cattle">View on GitHub</a>
-    </div>
-  </section>
+        // Contact form submission
+        const contactForm = document.getElementById('contact-form');
+        const formFeedback = document.getElementById('form-feedback');
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
 
-  <section id="hire">
-    <h2>Hire Me / Collaborate</h2>
-    <p>Open to exciting opportunities. Hit me up!</p>
-    <ul>
-      <li>Email: <a href="mailto:aryan@example.com">aryan@example.com</a></li>
-      <li>LinkedIn: <a href="https://linkedin.com/in/aryankaul">linkedin.com/in/aryankaul</a></li>
-    </ul>
-    <p>I'm into Python, backend, cybersecurity, project management, marketing, creativity, and challenging problems.</p>
-    <a href="Aryan-Kaul-Resume.pdf" download>Download My Resume</a>
-  </section>
+            // Basic validation
+            if (name.trim() === '' || email.trim() === '' || message.trim() === '') {
+                formFeedback.textContent = 'Please fill out all fields.';
+                formFeedback.style.color = 'rgb(251, 146, 60)'; // orange-400
+                return;
+            }
 
-  <footer>
-    <p>ar.1d.me © 2025; open‑source on GitHub</p>
-  </footer>
+            // In a real application, you would send this data to a server.
+            // For this demo, we'll just show a success message.
+            formFeedback.textContent = 'Thank you for your message! I will get back to you soon.';
+            formFeedback.style.color = 'rgb(34, 197, 94)'; // green-500
+            contactForm.reset();
 
+            setTimeout(() => {
+                formFeedback.textContent = '';
+            }, 5000);
+        });
+    </script>
 </body>
 </html>
