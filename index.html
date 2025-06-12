@@ -66,8 +66,6 @@
       animation: blink 1s step-end infinite;
       line-height: 1;
       margin-left: 2px;
-      position: relative;
-      top: 0;
     }
     @keyframes blink {
       from, to { color: transparent; }
@@ -100,6 +98,8 @@
       border: 1px solid #475569;
       box-shadow: 0 0 15px rgba(14,165,233,0.2);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      z-index: 1;
     }
     .card:hover {
       transform: scale(1.05);
@@ -125,20 +125,21 @@
       position: fixed;
       top: 0;
       left: 0;
-      width: 24px;
-      height: 24px;
-      background: url('https://cdn-icons-png.flaticon.com/512/545/545705.png') no-repeat center center;
-      background-size: contain;
+      width: 18px;
+      height: 18px;
+      background: #38bdf8;
+      border-radius: 50%;
       pointer-events: none;
       transform: translate(-50%, -50%);
       transition: transform 0.05s ease;
       z-index: 9999;
+      box-shadow: 0 0 18px #38bdf8;
     }
   </style>
 </head>
 <body>
   <div class="blur-overlay"></div>
-  <div class="cursor"></div>
+  <div class="cursor" id="customCursor"></div>
   <header>
     <h1><span class="typing-wrapper" id="typewriter"></span><span class="blinking-cursor">|</span></h1>
     <p>Technophile | Builder | Innovator</p>
@@ -147,7 +148,7 @@
   <main>
     <section>
       <h2>About Me</h2>
-      <p>I'm Aryan Sinha — a passionate tech enthusiast, hacker at heart, and creative problem solver. Pursuing my undergraduate in Biotechnology and Biochemical Engineering at IIT Kharagpur, I explore the intersection of life sciences and technology. I believe in leveraging code to build solutions that matter.</p>
+      <p>I'm Aryan Sinha — a passionate tech and bio enthusiast, hacker at heart, and creative problem solver. Pursuing my undergraduate in Biotechnology and Biochemical Engineering at IIT Kharagpur, I explore the intersection of life sciences and technology. I believe in leveraging code to build solutions that matter.</p>
     </section>
 
     <section>
@@ -172,8 +173,8 @@
 
     <section>
       <h2>Contact</h2>
-      <p>📧 <a href="mailto:aryan@example.com">aryan@example.com</a></p>
-      <p>🔗 <a href="https://linkedin.com/in/aryan-sinha" target="_blank">LinkedIn Profile</a></p>
+      <p>📧 <a href="mailto:https://x.com/The_Aryan_Sinha">X (aka Twitter)</a></p>
+      <p>🔗 <a href="https://www.linkedin.com/in/aryan-sinha1/" target="_blank">LinkedIn Profile</a></p>
     </section>
   </main>
 
@@ -184,13 +185,12 @@
   <script>
     const cursor = document.querySelector('.cursor');
     const blur = document.querySelector('.blur-overlay');
+    const cards = document.querySelectorAll('.card');
+    const links = document.querySelectorAll('a');
 
     document.addEventListener('mousemove', (e) => {
-      const x = (e.clientX / window.innerWidth) * 100;
-      const y = (e.clientY / window.innerHeight) * 100;
-      document.body.style.setProperty('--x', `${x}%`);
-      document.body.style.setProperty('--y', `${y}%`);
-
+      document.body.style.setProperty('--x', `${(e.clientX / window.innerWidth) * 100}%`);
+      document.body.style.setProperty('--y', `${(e.clientY / window.innerHeight) * 100}%`);
       cursor.style.top = `${e.clientY}px`;
       cursor.style.left = `${e.clientX}px`;
       blur.style.backdropFilter = 'blur(6px)';
@@ -200,6 +200,16 @@
         blur.style.backdropFilter = 'blur(0px)';
       }, 100);
     });
+
+    function hideCursorOnHover(elements) {
+      elements.forEach(el => {
+        el.addEventListener('mouseenter', () => cursor.style.opacity = '0');
+        el.addEventListener('mouseleave', () => cursor.style.opacity = '1');
+      });
+    }
+
+    hideCursorOnHover(cards);
+    hideCursorOnHover(links);
 
     // Typing effect
     const text = "Aryan Sinha";
