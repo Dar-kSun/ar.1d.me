@@ -18,6 +18,7 @@
       line-height: 1.6;
       transition: background 0.2s ease-out;
       overflow-x: hidden;
+      cursor: none;
     }
     .blur-overlay {
       position: fixed;
@@ -43,25 +44,34 @@
       margin: 0;
       font-size: 3rem;
       text-shadow: 0 0 10px #22d3ee;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
     header p {
       font-size: 1.25rem;
       margin-top: 0.5rem;
     }
     .typing-wrapper {
-      display: inline-block;
-      overflow: hidden;
-      white-space: nowrap;
-      border-right: 2px solid #38bdf8;
       font-size: 3rem;
-      animation: typing 3s steps(20, end), blink 0.75s step-end infinite;
+      display: inline-block;
+      white-space: nowrap;
+      overflow: hidden;
+      line-height: 1;
     }
-    @keyframes typing {
-      from { width: 0 }
-      to { width: 100% }
+    .blinking-cursor {
+      font-weight: bold;
+      font-size: 3rem;
+      color: #38bdf8;
+      animation: blink 1s step-end infinite;
+      line-height: 1;
+      margin-left: 2px;
+      position: relative;
+      top: 0;
     }
     @keyframes blink {
-      50% { border-color: transparent; }
+      from, to { color: transparent; }
+      50% { color: #38bdf8; }
     }
     main {
       max-width: 900px;
@@ -115,15 +125,14 @@
       position: fixed;
       top: 0;
       left: 0;
-      width: 12px;
-      height: 12px;
-      background: #38bdf8;
-      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      background: url('https://cdn-icons-png.flaticon.com/512/545/545705.png') no-repeat center center;
+      background-size: contain;
       pointer-events: none;
       transform: translate(-50%, -50%);
       transition: transform 0.05s ease;
       z-index: 9999;
-      box-shadow: 0 0 12px #38bdf8;
     }
   </style>
 </head>
@@ -131,7 +140,7 @@
   <div class="blur-overlay"></div>
   <div class="cursor"></div>
   <header>
-    <h1><span class="typing-wrapper">Aryan Sinha</span></h1>
+    <h1><span class="typing-wrapper" id="typewriter"></span><span class="blinking-cursor">|</span></h1>
     <p>Technophile | Builder | Innovator</p>
   </header>
 
@@ -190,6 +199,23 @@
       window.blurTimeout = setTimeout(() => {
         blur.style.backdropFilter = 'blur(0px)';
       }, 100);
+    });
+
+    // Typing effect
+    const text = "Aryan Sinha";
+    const speed = 120;
+    let i = 0;
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const target = document.getElementById("typewriter");
+      function typeWriter() {
+        if (i < text.length) {
+          target.innerHTML += text.charAt(i);
+          i++;
+          setTimeout(typeWriter, speed);
+        }
+      }
+      typeWriter();
     });
   </script>
 </body>
